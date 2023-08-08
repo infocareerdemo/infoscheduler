@@ -20,6 +20,7 @@ public class StockCash {
 	private Float open;
 	@Column(name ="high")
 	private Float high;
+	
 	@Column(name ="low")
 	private Float low;
 	@Column(name ="close")
