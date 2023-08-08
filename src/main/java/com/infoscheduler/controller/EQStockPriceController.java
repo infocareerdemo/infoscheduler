@@ -1,6 +1,7 @@
 package com.infoscheduler.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +20,7 @@ public class EQStockPriceController {
 
 	// Previous day price for the stock cash
 	@PostMapping("/pdayspupdate")
-	public String pDayEQStockPriceupdate(@RequestParam(defaultValue = "EQ") String EQseries,
+	public String pDayEQStockPriceupdate(@Validated @RequestParam(defaultValue = "EQ") String EQseries,
 			@RequestParam(defaultValue = "07-DEC-2022") String EQtimestamp) {
 		
 		System.out.println("<<<--- scheduler started for StockPrice EQ Daily Update --->>>");
